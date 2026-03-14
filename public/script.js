@@ -1,17 +1,35 @@
 const demoButton = document.getElementById('demo-btn');
-
-demoButton.addEventListener('click', () => {
-  const sectionTitle = document.querySelector('.section h2');
-
-  if (sectionTitle) {
-    sectionTitle.scrollIntoView({ behavior: 'smooth' });
-  }
-
-  setTimeout(() => {
-    alert('Скоро здесь появится демонстрация AI-ассистента.');
-  }, 500);
-});
+const demoInput = document.getElementById('demo-input');
+const demoResponse = document.getElementById('demo-response');
 const startButton = document.getElementById('start-btn');
+
+if (demoButton) {
+  demoButton.addEventListener('click', async () => {
+    const message = demoInput.value.trim();
+
+    if (!message) {
+      demoResponse.textContent = 'Пожалуйста, введите сообщение.';
+      return;
+    }
+
+    demoResponse.textContent = 'Отправка...';
+
+    try {
+      const response = await fetch('/api/demo', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ message })
+      });
+
+      const data = await response.json();
+      demoResponse.textContent = data.reply;
+    } catch (error) {
+      demoResponse.textContent = 'Произошла ошибка. Попробуйте еще раз.';
+    }
+  });
+}
 
 if (startButton) {
   startButton.addEventListener('click', () => {

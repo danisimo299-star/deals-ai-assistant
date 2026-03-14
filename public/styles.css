@@ -85,6 +85,30 @@ body {
   cursor: pointer;
   font-weight: bold;
 }
+.demo-form {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.demo-form input {
+  width: 320px;
+  max-width: 100%;
+  padding: 14px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
+
+.demo-response {
+  margin-top: 18px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
 
 .hero button:hover {
   opacity: 0.9;
@@ -163,5 +187,24 @@ body {
 .footer p {
   margin: 0;
   font-size: 15px;
+}
+.cta-section {
+  background: #dbeafe;
+}
+
+.cta-button {
+  margin-top: 20px;
+  padding: 14px 24px;
+  font-size: 16px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.cta-button:hover {
+  background: #1d4ed8;
 }
 
