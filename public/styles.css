@@ -104,10 +104,19 @@ body {
 }
 
 .demo-response {
-  margin-top: 18px;
+  margin: 20px auto 0;
+  max-width: 700px;
+  background: white;
+  color: #1f2937;
+  padding: 16px 18px;
+  border-radius: 12px;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: normal;
+  text-align: left;
+  border: 1px solid #dbe3f0;
 }
+
+
 
 
 .hero button:hover {
