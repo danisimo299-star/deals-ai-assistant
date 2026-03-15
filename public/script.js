@@ -24,7 +24,14 @@ if (demoButton) {
       });
 
       const data = await response.json();
-      demoResponse.innerHTML = `<strong>${data.title}</strong><br><br>${data.reply}`;
+      demoResponse.innerHTML = `
+  <div class="assistant-message">
+    <div class="assistant-label">AI Assistant</div>
+    <div class="assistant-title">${data.title}</div>
+    <div class="assistant-text">${data.reply}</div>
+  </div>
+`;
+
 
     } catch (error) {
       demoResponse.textContent = 'Произошла ошибка. Попробуйте еще раз.';
