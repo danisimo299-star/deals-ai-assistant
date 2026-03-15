@@ -28,16 +28,75 @@
   и повседневными задачами бизнеса.
 </p>
 
+<div class="chat-box" id="chat-box">
+  <div class="chat-message assistant">
+    <div class="message-label">AI Assistant</div>
+    <div class="message-text">
+      Привет! Я готов помочь с задачами, текстами и рабочими вопросами.
+    </div>
+  </div>
+</div>
+
 <div class="demo-form">
   <input
     type="text"
     id="demo-input"
-    placeholder="Напишите сообщение для демо..."
+    placeholder="Напишите сообщение..."
   />
   <button id="demo-btn">Отправить</button>
+  <button id="clear-chat-btn" type="button">Очистить чат</button>
 </div>
 
+
+<div class="file-form">
+  <input type="file" id="txt-file-input" accept=".txt" />
+  <button id="upload-btn">Загрузить TXT</button>
+</div>
+
+<div class="file-form">
+  <input type="file" id="pdf-file-input" accept=".pdf" />
+  <button id="upload-pdf-btn">Загрузить PDF</button>
+</div>
+
+<div class="file-form">
+  <input type="file" id="docx-file-input" accept=".docx" />
+  <button id="upload-docx-btn">Загрузить DOCX</button>
+</div>
+
+<div class="current-file-box">
+  <div id="current-file-text">Текущий файл: не выбран</div>
+  <button id="clear-file-btn" type="button">Очистить файл</button>
+</div>
+
+<div class="demo-examples">
+  <span>Примеры:</span>
+  <button class="example-btn" data-text="Помоги написать ответ клиенту">ответ клиенту</button>
+  <button class="example-btn" data-text="Сделай краткий деловой текст">краткий текст</button>
+  <button class="example-btn" data-text="Объясни простыми словами преимущества AI-ассистента">объяснение</button>
+</div>
+
+<div class="task-modes">
+  <span>Режимы задач:</span>
+  <button class="task-btn" data-mode="client-reply">Ответ клиенту</button>
+  <button class="task-btn" data-mode="short">Кратко</button>
+  <button class="task-btn" data-mode="simple">Объяснить просто</button>
+  <button class="task-btn" data-mode="steps">Список шагов</button>
+</div>
+
+
+<div class="file-question-form">
+  <input
+    type="text"
+    id="file-question-input"
+    placeholder="Задайте вопрос по последнему загруженному файлу..."
+  />
+  <button id="file-question-btn">Спросить по файлу</button>
+</div>
+
+
+
 <p id="demo-response" class="demo-response"></p>
+
 
     </div>
   </header>
@@ -65,6 +124,14 @@
             <h3>Работа с файлами</h3>
             <p>Помогает анализировать документы, искать важную информацию и упрощать работу с файлами.</p>
           </div>
+    <div class="single-feature">
+  <div class="card">
+    <h3>Подготовка ответов</h3>
+    <p>Помогает формулировать ответы, объяснения и деловые сообщения для повседневной работы.</p>
+  </div>
+</div>
+
+
 
           <div class="card">
             <h3>Ответы на вопросы</h3>
@@ -109,6 +176,27 @@
         <h3>1. Загрузка данных</h3>
         <p>Пользователь загружает файлы или передает информацию в систему.</p>
       </div>
+
+    <section class="section alt-section" id="requests">
+  <div class="container">
+    <h2>Примеры запросов</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Работа с файлами</h3>
+        <p>«Помоги с файлами и найди нужную информацию»</p>
+      </div>
+      <div class="card">
+        <h3>Работа с клиентами</h3>
+        <p>«Подскажи, как быстрее отвечать клиентам»</p>
+      </div>
+      <div class="card">
+        <h3>Работа с документами</h3>
+        <p>«Помоги проанализировать документы и упростить рутину»</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       <div class="card">
         <h3>2. Анализ запроса</h3>
