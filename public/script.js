@@ -24,7 +24,8 @@ if (demoButton) {
       });
 
       const data = await response.json();
-      demoResponse.textContent = data.reply;
+      demoResponse.innerHTML = `<strong>${data.title}</strong><br><br>${data.reply}`;
+
     } catch (error) {
       demoResponse.textContent = 'Произошла ошибка. Попробуйте еще раз.';
     }
