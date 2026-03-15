@@ -212,6 +212,7 @@ if (uploadDocxButton) {
 
       const data = await response.json();
       addMessage('assistant', 'AI Assistant', data.reply);
+      loadCurrentFileInfo();
     } catch (error) {
       addMessage('assistant', 'AI Assistant', 'Ошибка при загрузке DOCX.');
     }
@@ -238,6 +239,23 @@ if (uploadDocxButton) {
     }
   });
 }
+
+if (clearFileButton) {
+  clearFileButton.addEventListener('click', async () => {
+    try {
+      const response = await fetch('/api/clear-file', {
+        method: 'POST'
+      });
+
+      const data = await response.json();
+      loadCurrentFileInfo();
+      addMessage('assistant', 'AI Assistant', data.reply);
+    } catch (error) {
+      addMessage('assistant', 'AI Assistant', 'Не удалось очистить текущий файл.');
+    }
+  });
+}
+
 
 if (clearChatButton) {
   clearChatButton.addEventListener('click', async () => {
