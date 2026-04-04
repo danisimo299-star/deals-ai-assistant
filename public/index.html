@@ -6,104 +6,224 @@
   <title>DeAl's AI Assistant | AI для малого бизнеса</title>
   <meta
     name="description"
-    content="DeAl's AI Assistant — AI-ассистент для малого бизнеса. Работа с файлами, поиск информации, ответы на вопросы и автоматизация рутинных задач."
+    content="DeAl's AI Assistant — AI-ассистент для малого бизнеса. Работа с файлами, анализ документов, ответы на вопросы и автоматизация рутинных задач."
   />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <nav class="navbar">
-  <div class="container nav-container">
-    <div class="logo">DeAl's AI Assistant</div>
+  <nav class="navbar">
+    <div class="nav-brand">
+      <a href="index.html">DeAl's AI Assistant</a>
+    </div>
+
     <div class="nav-links">
-  <a href="features.html">Возможности</a>
-  <a href="audience.html">Для кого</a>
-  <a href="benefits.html">Польза</a>
-  <a href="contacts.html">Контакты</a>
-</div>
-  </div>
-</nav>
- 
-<div class="chat-box" id="chat-box">
-  <div class="chat-message assistant">
-    <div class="message-label">AI Assistant</div>
-    <div class="message-text">
-      Привет! Я готов помочь с задачами, текстами и рабочими вопросами.
+      <a href="auth.html">Аккаунт</a>
+      <a href="features.html">Возможности</a>
+      <a href="audience.html">Для кого</a>
+      <a href="benefits.html">Польза</a>
+      <a href="contacts.html">Контакты</a>
     </div>
-  </div>
-</div>
+  </nav>
 
-<div class="demo-form">
-  <input
-    type="text"
-    id="demo-input"
-    placeholder="Напишите сообщение..."
-  />
-  <button id="demo-btn">Отправить</button>
-  <button id="clear-chat-btn" type="button">Очистить чат</button>
-</div>
+  <main class="page">
+    <section class="hero">
+      <div class="hero-card">
+        <h2>AI-ассистент для малого бизнеса</h2>
+        <p>
+          Пиши сообщения, загружай TXT, PDF и DOCX, задавай вопросы по документам
+          и используй специальные режимы задач в одном интерфейсе.
+        </p>
+      </div>
 
+      <div class="hero-card">
+        <h3 class="panel-title">Что умеет сейчас</h3>
+        <p class="muted">
+          Обычный AI-чат, анализ файлов, персональная история, статистика,
+          режимы задач и работа с текущим активным документом.
+        </p>
+      </div>
+    </section>
 
-<div class="file-form">
-  <input type="file" id="txt-file-input" accept=".txt" />
-  <button id="upload-btn">Загрузить TXT</button>
-</div>
+    <section class="app-shell">
+      <div class="main-column">
+        <div class="panel">
+          <div class="panel-header">
+            <h3 class="panel-title">Чат</h3>
+          </div>
 
-<div class="file-form">
-  <input type="file" id="pdf-file-input" accept=".pdf" />
-  <button id="upload-pdf-btn">Загрузить PDF</button>
-</div>
+          <div class="panel-body">
+            <div class="chat-box" id="chat-box">
+              <div class="message assistant">
+                <div class="message-content">
+                  <div class="message-label">AI ASSISTANT</div>
+                  <div class="message-text">
+                    Привет! Я готов помочь с задачами, текстами и рабочими вопросами.
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<div class="file-form">
-  <input type="file" id="docx-file-input" accept=".docx" />
-  <button id="upload-docx-btn">Загрузить DOCX</button>
-</div>
+            <div class="composer">
+              <input
+                type="text"
+                id="messageInput"
+                placeholder="Напишите сообщение..."
+                autocomplete="off"
+              />
+              <button id="sendButton" type="button">Отправить</button>
+              <button id="clearChatBtn" type="button">Очистить чат</button>
+            </div>
+          </div>
+        </div>
 
-<div class="current-file-box">
-  <div id="current-file-text">Текущий файл: не выбран</div>
-  <button id="clear-file-btn" type="button">Очистить файл</button>
-</div>
+        <div class="panel mt-3">
+          <div class="panel-header">
+            <h3 class="panel-title">Файлы</h3>
+          </div>
 
-<div class="demo-examples">
-  <span>Примеры:</span>
-  <button class="example-btn" data-text="Помоги написать ответ клиенту">ответ клиенту</button>
-  <button class="example-btn" data-text="Сделай краткий деловой текст">краткий текст</button>
-  <button class="example-btn" data-text="Объясни простыми словами преимущества AI-ассистента">объяснение</button>
-</div>
+          <div class="panel-body">
+            <div class="files-grid">
+              <div class="file-row">
+                <input type="file" id="txtFile" accept=".txt" />
+                <button id="uploadTxtBtn" type="button">Загрузить TXT</button>
+              </div>
 
-<div class="task-modes">
-  <span>Режимы задач:</span>
-  <button class="task-btn" data-mode="client-reply">Ответ клиенту</button>
-  <button class="task-btn" data-mode="short">Кратко</button>
-  <button class="task-btn" data-mode="simple">Объяснить просто</button>
-  <button class="task-btn" data-mode="steps">Список шагов</button>
-</div>
+              <div class="file-row">
+                <input type="file" id="pdfFile" accept=".pdf" />
+                <button id="uploadPdfBtn" type="button">Загрузить PDF</button>
+              </div>
 
+              <div class="file-row">
+                <input type="file" id="docxFile" accept=".docx" />
+                <button id="uploadDocxBtn" type="button">Загрузить DOCX</button>
+              </div>
+            </div>
 
-<div class="file-question-form">
-  <input
-    type="text"
-    id="file-question-input"
-    placeholder="Задайте вопрос по последнему загруженному файлу..."
-  />
-  <button id="file-question-btn">Спросить по файлу</button>
-</div>
+            <div class="mt-3 grid-2">
+              <div id="currentFileBox" class="current-file">
+                Текущий файл: не выбран
+              </div>
 
+              <button id="clearFileBtn" class="btn-danger" type="button">
+                Очистить файл
+              </button>
+            </div>
+          </div>
+        </div>
 
+        <div class="panel mt-3">
+          <div class="panel-header">
+            <h3 class="panel-title">Быстрые примеры</h3>
+          </div>
 
-<p id="demo-response" class="demo-response"></p>
+          <div class="panel-body">
+            <div class="examples-row">
+              <button class="example-btn" type="button">ответ клиенту</button>
+              <button class="example-btn" type="button">краткий текст</button>
+              <button class="example-btn" type="button">объяснение</button>
+            </div>
+          </div>
+        </div>
 
+        <div class="panel mt-3">
+          <div class="panel-header">
+            <h3 class="panel-title">Режимы задач</h3>
+          </div>
 
-    </div>
-  </header>
+          <div class="panel-body">
+            <div class="modes-row">
+              <button class="mode-btn" type="button">Ответ клиенту</button>
+              <button class="mode-btn" type="button">Кратко</button>
+              <button class="mode-btn" type="button">Объяснить просто</button>
+              <button class="mode-btn" type="button">Список шагов</button>
+            </div>
+          </div>
+        </div>
 
-  
+        <div class="panel mt-3">
+          <div class="panel-header">
+            <h3 class="panel-title">Вопрос по текущему файлу</h3>
+          </div>
+
+          <div class="panel-body">
+            <div class="composer">
+              <input
+                type="text"
+                id="fileQuestionInput"
+                placeholder="Задайте вопрос по последнему загруженному файлу..."
+                autocomplete="off"
+              />
+              <button id="askFileBtn" type="button">Спросить по файлу</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="side-column">
+        <div class="panel">
+          <div class="panel-header">
+            <h3 class="panel-title">Статистика использования</h3>
+          </div>
+
+          <div class="panel-body">
+            <div class="stats-list">
+              <div class="stat-card">
+                <strong>Всего записей</strong>
+                <div class="stat-value" id="stat-total">0</div>
+              </div>
+
+              <div class="stat-card">
+                <strong>Сообщений пользователя</strong>
+                <div class="stat-value" id="stat-user">0</div>
+              </div>
+
+              <div class="stat-card">
+                <strong>Ответов ассистента</strong>
+                <div class="stat-value" id="stat-assistant">0</div>
+              </div>
+
+              <div class="stat-card">
+                <strong>Загрузок файлов</strong>
+                <div class="stat-value" id="stat-files">0</div>
+              </div>
+
+              <div class="stat-card">
+                <strong>Вопросов по файлу</strong>
+                <div class="stat-value" id="stat-file-questions">0</div>
+              </div>
+
+              <div class="stat-card">
+                <strong>Режимов задач</strong>
+                <div class="stat-value" id="stat-modes">0</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel mt-3">
+          <div class="panel-header">
+            <h3 class="panel-title">История запросов</h3>
+          </div>
+
+          <div class="panel-body">
+            <div class="history-actions mb-2">
+              <button id="clear-history-btn" type="button">Очистить историю</button>
+            </div>
+
+            <div id="history-list" class="history-list">
+              <div class="history-empty">История пока пуста.</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
   </main>
-  <footer class="footer">
-  <div class="container">
-    <p>© 2026 DeAl's AI Assistant. Проект AI-ассистента для малого бизнеса.</p>
-  </div>
-</footer>
 
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 DeAl's AI Assistant. Проект AI-ассистента для малого бизнеса.</p>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
